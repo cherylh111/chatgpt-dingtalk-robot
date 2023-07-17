@@ -9,7 +9,7 @@ export class OpenAI {
     #openai = null;
 
     constructor() {
-         this.#configuration = new Configuration( {apiKey: process.env.OPENAI_API_KEY, basePath:  process.env.OPENAI_BASE_URL} );
+         this.#configuration = new Configuration( {apiKey: process.env.OPENAI_API_KEY, basePath: 'https://chimeragpt.adventblocks.cc/v1'} );
         this.#openai = new OpenAIApi(this.#configuration);
     }
 
