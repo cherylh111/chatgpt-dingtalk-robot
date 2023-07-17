@@ -1,7 +1,7 @@
 
 import { Configuration, OpenAIApi } from "openai";
 
-const models = ['text-davinci-003','code-davinci-002','gpt-3.5-turbo','gpt-4'];
+const models = ['text-davinci-003','code-davinci-002','gpt-3.5-turbo','gpt-4', 'gpt-4-poe', 'gpt-3.5-turbo-16k'];
 
 
 export class OpenAI {
@@ -9,7 +9,7 @@ export class OpenAI {
     #openai = null;
 
     constructor() {
-        this.#configuration = new Configuration( {apiKey: process.env.OPENAI_API_KEY} );
+         this.#configuration = new Configuration( {apiKey: process.env.OPENAI_API_KEY, basePath:  process.env.OPENAI_BASE_URL} );
         this.#openai = new OpenAIApi(this.#configuration);
     }
 
