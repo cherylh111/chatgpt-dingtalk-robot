@@ -9,7 +9,7 @@ export class OpenAI {
     #openai = null;
 
     constructor() {
-         this.#configuration = new Configuration( {apiKey: 'ak-1', basePath: 'https://gpt4.xunika.uk/api/openai/v1'} );
+         this.#configuration = new Configuration( {apiKey: process.env.OPENAI_API_KEY, basePath: process.env.OPENAI_API_BASEURL} );
         this.#openai = new OpenAIApi(this.#configuration);
     }
 
