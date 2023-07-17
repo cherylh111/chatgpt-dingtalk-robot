@@ -25,3 +25,5 @@ services:
         sync: false
       - key: CHAT_HISTORY
         sync: false
+      - key: OPENAI_BASE_URL
+        sync: false
